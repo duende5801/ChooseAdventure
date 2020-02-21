@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Scene } from '../interfaces/scene';
 
 @Component({
   selector: 'app-game',
@@ -7,14 +8,20 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./game.page.scss'],
 })
 export class GamePage implements OnInit {
-  gameData: any;
+  displayScene: Scene;
 
   constructor(private dService: DataService) { }
 
   ngOnInit() {
-    this.dService.storyData.subscribe(data => {
-      this.gameData = data;
-    });
+    //getting first scene
+    this.displayScene = this.dService.getFirstScene();
+  }
+  nextScene(id) {
+    console.log(id);
+    if(this.displayScene.ending === true){
+      //ending stuff
+    }
+    this.displayScene = this.dService.getNextScene(id);
   }
 
 }

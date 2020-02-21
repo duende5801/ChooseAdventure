@@ -14,9 +14,9 @@
   </ion-header>
 
   <div id="container">
-    <strong>{{gameData.gsx$senarios.$t}}</strong>
+    <strong>{{displayScene.senarios}}</strong>
     <br>
-    <ion-button>Option 1</ion-button>
-    <ion-button>Option 2</ion-button>
+    <ion-button (click)='nextScene(displayScene.result1)'>{{displayScene.choice1}}</ion-button>
+    <ion-button (click)='nextScene(displayScene.result2)'>{{displayScene.choice2}}</ion-button>
   </div>
 </ion-content>
