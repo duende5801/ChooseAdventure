@@ -22,22 +22,13 @@ export class GamePage implements OnInit {
     this.displayScene = this.dService.getFirstScene();
   }
   nextScene(id) {
-    console.log(id);
-    // if (this.displayScene.ending === 't') {
-    //   // ending stuff here
-    //   this.router.navigate(['/ending']);
-    // }
     if (this.displayScene.ending === 't') {
-      this.show = false;
-      this.ending = true;
-      this.endingPic = false;
+      // ending stuff here
+      this.router.navigate(['/ending']);
     }
     this.displayScene = this.dService.getNextScene(id);
   }
-  // scoreIncrease() {
-  //   if (this.displayScene.choice1 === 'Play hookie' ) {
-  //     this.score = this.score - 1;
-  //   }
-  // }
-
+  pointSystem(num) {
+    this.dService.pointSystem(num);
+  }
 }

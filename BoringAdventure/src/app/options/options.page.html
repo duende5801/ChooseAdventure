@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Options?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <strong>There are some checkboxes. I wonder what they do? (perhaps some sort of *easter egg*?)</strong>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="danger"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox (click)="toggle()" color="dark"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="display">
+    <ion-row>
+      <ion-col>
+        <ion-checkbox (click)="toggle2()" color="primary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="danger"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="dark"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="display2">
+    <ion-row>
+      <ion-col>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox (click)="toggle3()" color="danger"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="dark"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="display3">
+    <ion-row>
+      <ion-col>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox (click)="winner()" color="danger"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox color="dark"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button routerLink="/home">Go Back</ion-button>
+
+
+</ion-content>

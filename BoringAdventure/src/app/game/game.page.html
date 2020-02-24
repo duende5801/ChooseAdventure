@@ -14,12 +14,12 @@
   </ion-header>
 
   <div id="container">
-    <img src={{displayScene.assets}} alt="qq" style="width: 250px;">
+    <img *ngIf="endingPic" src={{displayScene.assets}} alt="qq" style="width: 250px;">
     <br>
     <strong>{{displayScene.senarios}}</strong>
     <br>
-    <ion-button *ngIf="show" (click)='nextScene(displayScene.result1)'>{{displayScene.choice1}}</ion-button>
-    <ion-button *ngIf="show" (click)='nextScene(displayScene.result2)'>{{displayScene.choice2}}</ion-button>
+    <ion-button *ngIf="show" (click)='pointSystem(displayScene.points1)' (click)='nextScene(displayScene.result1)'>{{displayScene.choice1}}</ion-button>
+    <ion-button *ngIf="show" (click)='pointSystem(displayScene.points2)' (click)='nextScene(displayScene.result2)'>{{displayScene.choice2}}</ion-button>
     <ion-button *ngIf="ending" routerLink='/home'>Home</ion-button>
   </div>
 </ion-content>

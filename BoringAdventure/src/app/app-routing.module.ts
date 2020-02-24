@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'ending',
     loadChildren: () => import('./ending/ending.module').then( m => m.EndingPageModule)
+  },  {
+    path: 'options',
+    loadChildren: () => import('./options/options.module').then( m => m.OptionsPageModule)
   }
+
 ];
 
 @NgModule({

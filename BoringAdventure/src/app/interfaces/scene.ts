@@ -5,8 +5,8 @@ export interface Scene {
     choice2: string;
     result1: string;
     result2: string;
-    points1: string;
-    points2: string;
+    points1: number;
+    points2: number;
     ending: string;
     assets: string;
 }

@@ -14,6 +14,7 @@ export class DataService {
   private scenes: Scene[] = [];
   private ending: Ending[] = [];
   private audio = new Audio();
+  score = 0;
 
   constructor(private http: HttpClient) {
     this.getData();
@@ -33,7 +34,7 @@ export class DataService {
             choice2: s.gsx$choice2.$t,
             result1: s.gsx$result1.$t,
             result2: s.gsx$result2.$t,
-            points1: s.gsx$points1.$t,
+            points1: s.gsx$points1.$t as number,
             points2: s.gsx$points2.$t,
             ending: s.gsx$ending.$t,
             assets: s.gsx$assets.$t
@@ -59,9 +60,13 @@ export class DataService {
         console.log(this.ending);
       });
   }
-  // ----------------was gonna do it this way instead go to lecture notes-------------------//
   getScene(num: number) {
-    return this.scenes.find(element => element.id === num);
+    return this.ending.find(element => element.id === num);
+  }
+  pointSystem(num) {
+    console.log('the point is: ' + num);
+    this.score = this.score + +num;
+    console.log('the score is: ' + this.score);
   }
   getEnding(id: number): Ending {
     return this.ending[id];
@@ -75,8 +80,9 @@ export class DataService {
     return this.scenes[0];
   }
   playMusic() {
-    this.audio.src = 'assets/music/Cake-ComfortEagle.mp3';
+    this.audio.src = 'assets/music/ill-be-there.mp3';
     this.audio.autoplay = true;
     this.audio.play();
+    this.audio.loop = true;
   }
 }
