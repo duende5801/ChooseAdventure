@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class HomePage {
 
-  constructor(private dService: DataService) {}
-
+  constructor(private dService: DataService) {
+    this.dService.playMusic();
+  }
 }

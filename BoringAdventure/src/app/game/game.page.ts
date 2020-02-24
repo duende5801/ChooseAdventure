@@ -10,20 +10,34 @@ import { Router } from '@angular/router';
 })
 export class GamePage implements OnInit {
   displayScene: Scene;
+  score = 0;
+  show = true;
+  ending = false;
+  endingPic = true;
 
   constructor(private dService: DataService, private router: Router) { }
 
   ngOnInit() {
-    //getting first scene
+    // getting first scene
     this.displayScene = this.dService.getFirstScene();
   }
   nextScene(id) {
     console.log(id);
-    if(this.displayScene.ending === true){
-      //ending stuff here
-      this.router.navigate(['/ending']);
+    // if (this.displayScene.ending === 't') {
+    //   // ending stuff here
+    //   this.router.navigate(['/ending']);
+    // }
+    if (this.displayScene.ending === 't') {
+      this.show = false;
+      this.ending = true;
+      this.endingPic = false;
     }
     this.displayScene = this.dService.getNextScene(id);
   }
+  // scoreIncrease() {
+  //   if (this.displayScene.choice1 === 'Play hookie' ) {
+  //     this.score = this.score - 1;
+  //   }
+  // }
 
 }
